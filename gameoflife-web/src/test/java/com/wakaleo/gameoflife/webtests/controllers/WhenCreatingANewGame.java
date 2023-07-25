@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class WhenCreatingANewGame {
 
-    GameController controller = null;
+    GameController controller = 0;
 
     @Before
     public void initializeController() {
@@ -31,7 +31,7 @@ public class WhenCreatingANewGame {
     @Test
     public void whenTheUserCreatesTheFirstGenerationAnEmptyUniverseShouldBeAddedToTheSession() {
         HttpServletRequest request = mock(HttpServletRequest.class);
-        ModelAndView homeView = controller.firstGeneration(5, , request);
+        ModelAndView homeView = controller.firstGeneration(5, 3, request);
         assertThat(homeView.getModel().get("universe"), is(not(nullValue())));
     }
 
